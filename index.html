@@ -25,6 +25,21 @@
       flex-direction: column;
       justify-content: space-around;
     }
+
+    /* PLAYER 1 INVERTIDO COMPLETAMENTE */
+    #player1 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1em 0.5em;
+      border-top: 3px solid #56ccf2;
+      transform: rotate(180deg);
+    }
+    #player1 * {
+      transform: rotate(180deg);
+    }
+
     .player {
       flex: 1;
       display: flex;
@@ -36,9 +51,9 @@
     .player:first-child {
       border-top: none;
     }
+
     .name-input {
       font-size: 6vw;
-      width: 80%;
       background: transparent;
       border: none;
       border-bottom: 2px solid #56ccf2;
@@ -47,15 +62,20 @@
       text-align: center;
       outline: none;
       margin-bottom: 0.5em;
+      width: 80%;
     }
+
     .name-input::placeholder {
       color: #56ccf280;
     }
+
     .letters {
       font-size: 8vw;
       font-weight: 900;
       margin-bottom: 0.5em;
+      text-align: center;
     }
+
     button {
       font-size: 4.5vw;
       padding: 0.7em 1.2em;
@@ -67,14 +87,17 @@
       cursor: pointer;
       margin-top: 0.3em;
     }
+
     button:hover:not(:disabled) {
       background: #39a1e4;
     }
+
     button:disabled {
       background: #333;
       color: #999;
       cursor: default;
     }
+
     #result {
       text-align: center;
       font-size: 6vw;
@@ -82,6 +105,7 @@
       color: #e1ff00;
       margin-top: 0.5em;
     }
+
     #reset {
       font-size: 4vw;
       padding: 0.7em 1.5em;
@@ -91,7 +115,9 @@
       color: white;
       border-radius: 10px;
       font-weight: 700;
+      width: 50%;
     }
+
     .active-player {
       background: #1d1d1d;
     }
@@ -117,8 +143,8 @@
   <button id="reset" onclick="resetGame()">Reiniciar</button>
 
   <script>
-    const maxLetters = 5; // S.K.A.T.E
-    const skateWord = "S.K.A.T.E";
+    const maxLetters = 5; // S K A T E sin puntos
+    const skateWord = "SKATE";
     let letters = [1, 1]; // cada jugador empieza con "S"
     let currentPlayer = 0;
     let gameEnded = false;
