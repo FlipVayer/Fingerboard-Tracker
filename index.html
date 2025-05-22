@@ -18,11 +18,22 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
-    .players {
+    h1 {
+      font-size: 4vw;
+      margin: 1em 0 0.5em;
+      color: #56ccf2;
+      text-align: center;
+    }
+
+    .game-area {
       display: flex;
       flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
       flex: 1;
     }
 
@@ -33,11 +44,7 @@
       align-items: center;
       justify-content: center;
       padding: 1em;
-      border-right: 3px solid #56ccf2;
-    }
-
-    .player:last-child {
-      border-right: none;
+      /* Eliminada la línea que estaba aquí */
     }
 
     .name-input {
@@ -86,6 +93,17 @@
       cursor: default;
     }
 
+    .logo-container {
+      width: 350px;
+      margin: 0 2em;
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     #result {
       text-align: center;
       font-size: 5vw;
@@ -111,26 +129,34 @@
     }
 
     @media (max-width: 768px) {
-      .players {
+      .game-area {
         flex-direction: column;
       }
       .player {
-        border-right: none;
-        border-top: 3px solid #56ccf2;
+        border-top: 3px solid #56ccf2; /* línea celeste para ambos en móvil */
       }
       .player:first-child {
         border-top: none;
+      }
+      .logo-container {
+        margin: 2em 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="players">
+  <h1>Subgrip PVP</h1>
+
+  <div class="game-area">
     <div id="player1" class="player active-player">
       <input class="name-input" placeholder="Jugador 1" />
       <div class="letters" id="letters1">S</div>
       <button onclick="addLetter(0)">Fallar</button>
+    </div>
+
+    <div class="logo-container">
+      <img src="Logo.png" alt="Logo Subgrip" />
     </div>
 
     <div id="player2" class="player">
