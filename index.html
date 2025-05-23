@@ -44,7 +44,6 @@
       align-items: center;
       justify-content: center;
       padding: 1em;
-      /* Eliminada la línea que estaba aquí */
     }
 
     .name-input {
@@ -93,6 +92,19 @@
       cursor: default;
     }
 
+    .phone-icon {
+  margin-bottom: -500px; /* antes estaba en -180px o -140px */
+  z-index: 1;
+}
+
+
+    .phone-icon img {
+      width: 200px;
+      filter: brightness(0) invert(1);
+      display: block;
+      margin: 0 auto;
+    }
+
     .logo-container {
       width: 350px;
       margin: 0 2em;
@@ -133,13 +145,16 @@
         flex-direction: column;
       }
       .player {
-        border-top: 3px solid #56ccf2; /* línea celeste para ambos en móvil */
+        border-top: 3px solid #56ccf2;
       }
       .player:first-child {
         border-top: none;
       }
       .logo-container {
         margin: 2em 0;
+      }
+      .phone-icon {
+        margin-bottom: -140px;
       }
     }
   </style>
@@ -149,14 +164,20 @@
   <h1>Subgrip PVP</h1>
 
   <div class="game-area">
+
     <div id="player1" class="player active-player">
       <input class="name-input" placeholder="Jugador 1" />
       <div class="letters" id="letters1">S</div>
       <button onclick="addLetter(0)">Fallar</button>
     </div>
 
-    <div class="logo-container">
-      <img src="Logo.png" alt="Logo Subgrip" />
+    <div>
+      <div class="phone-icon">
+        <img src="Celular.png" alt="Celular Blanco" />
+      </div>
+      <div class="logo-container">
+        <img src="Logo.png" alt="Logo Subgrip" />
+      </div>
     </div>
 
     <div id="player2" class="player">
@@ -164,6 +185,7 @@
       <div class="letters" id="letters2">S</div>
       <button onclick="addLetter(1)">Fallar</button>
     </div>
+
   </div>
 
   <div id="result"></div>
